@@ -1,0 +1,37 @@
+{
+  "components": [
+    {
+      "label": "Risk Metric",
+      "values": [
+        {
+          "label": "Low",
+          "value": "Low"
+        },
+        {
+          "label": "Medium",
+          "value": "Medium"
+        },
+        {
+          "label": "High",
+          "value": "High"
+        }
+      ],
+      "type": "select",
+      "layout": {
+        "row": "Row_1cf12rq",
+        "columns": null
+      },
+      "id": "Field_185uu3r",
+      "key": "select_atzs4"
+    }
+  ],
+  "type": "default",
+  "id": "risk-metric-form",
+  "exporter": {
+    "name": "Fluxnova Modeler",
+    "version": "1.1.1-dev"
+  },
+  "executionPlatform": "Fluxnova Platform",
+  "executionPlatformVersion": "1.0.0",
+  "schemaVersion": 18
+}

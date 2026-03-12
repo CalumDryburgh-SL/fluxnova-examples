@@ -1,0 +1,26 @@
+{
+  "components": [
+    {
+      "label": "Approved?",
+      "type": "checkbox",
+      "layout": {
+        "row": "Row_0t7zn41",
+        "columns": null
+      },
+      "id": "Field_0rweuzb",
+      "key": "riskAcceptable",
+      "validate": {
+        "required": false
+      }
+    }
+  ],
+  "type": "default",
+  "id": "risk-approval-form",
+  "exporter": {
+    "name": "Fluxnova Modeler",
+    "version": "1.1.1-dev"
+  },
+  "executionPlatform": "Fluxnova Platform",
+  "executionPlatformVersion": "1.0.0",
+  "schemaVersion": 18
+}
