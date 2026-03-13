@@ -51,6 +51,18 @@ export default function Home() {
     const currentQuestion = trimmedQuestion;
     setQuestion("");
 
+    const messageId = Date.now();
+
+    // Add the user's message immediately with an empty answer
+    setMessages((prev) => [
+      ...prev,
+      {
+        id: messageId,
+        question: currentQuestion,
+        answer: "",
+      },
+    ]);
+
     // Real mode - call backend
     try {
       const response = await fetch("http://localhost:8083/chat", {
@@ -69,16 +81,16 @@ export default function Home() {
       }
 
       const responseText = await response.text();
-      setMessages((prev) => [
-        ...prev,
-        {
-          id: Date.now(),
-          question: currentQuestion,
-          answer: responseText,
-        },
-      ]);
+      // Update the existing message with the answer
+      setMessages((prev) =>
+        prev.map((msg) =>
+          msg.id === messageId ? { ...msg, answer: responseText } : msg,
+        ),
+      );
     } catch {
       setStatusMessage("Unable to submit question. Please try again.");
+      // Remove the pending message on error
+      setMessages((prev) => prev.filter((msg) => msg.id !== messageId));
     } finally {
       setIsSubmitting(false);
     }
@@ -114,31 +126,33 @@ export default function Home() {
               <div className="message user-message">
                 <div className="message-content">{message.question}</div>
               </div>
-              <div className="message bot-message">
-                <div className="message-content">
-                  <ReactMarkdown
-                    className="qa-answer-markdown"
-                    remarkPlugins={[remarkGfm]}
-                  >
-                    {message.answer}
-                  </ReactMarkdown>
+              {message.answer ? (
+                <div className="message bot-message">
+                  <div className="message-content">
+                    <ReactMarkdown
+                      className="qa-answer-markdown"
+                      remarkPlugins={[remarkGfm]}
+                    >
+                      {message.answer}
+                    </ReactMarkdown>
+                  </div>
                 </div>
-              </div>
+              ) : (
+                isSubmitting && (
+                  <div className="loading-container">
+                    <div className="loading-dots">
+                      <div className="loading-dot"></div>
+                      <div className="loading-dot"></div>
+                      <div className="loading-dot"></div>
+                    </div>
+                    <span className="loading-text">
+                      FlowSight is analyzing your request...
+                    </span>
+                  </div>
+                )
+              )}
             </div>
           ))}
-
-          {isSubmitting && (
-            <div className="loading-container">
-              <div className="loading-dots">
-                <div className="loading-dot"></div>
-                <div className="loading-dot"></div>
-                <div className="loading-dot"></div>
-              </div>
-              <span className="loading-text">
-                FlowSight is analyzing your request...
-              </span>
-            </div>
-          )}
 
           <div ref={messagesEndRef} />
         </div>
