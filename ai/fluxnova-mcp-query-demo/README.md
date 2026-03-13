@@ -17,8 +17,8 @@ Once all services are healthy, open [http://localhost:3000](http://localhost:300
 
 ## Services
 
-| Service | URL | Description |
-|---------|-----|-------------|
-| demo-ui | http://localhost:3000 | Chat UI |
-| mcp-client | http://localhost:8083 | AI chatbot / MCP client |
+| Service          | URL                   | Description             |
+| ---------------- | --------------------- | ----------------------- |
+| demo-ui          | http://localhost:3000 | Chat UI                 |
+| mcp-client       | http://localhost:8083 | AI chatbot / MCP client |
 | fluxnova-service | http://localhost:8084 | BPM engine + MCP server |
