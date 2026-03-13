@@ -1,0 +1,128 @@
+{
+  "components": [
+    {
+      "label": "Credit Score",
+      "type": "number",
+      "layout": {
+        "row": "Row_0cs1k01",
+        "columns": null
+      },
+      "id": "Field_0cs1k01",
+      "key": "creditScore",
+      "validate": {
+        "required": true,
+        "min": 0,
+        "max": 999
+      }
+    },
+    {
+      "label": "Loan Amount",
+      "type": "number",
+      "layout": {
+        "row": "Row_0la2k02",
+        "columns": null
+      },
+      "id": "Field_0la2k02",
+      "key": "loanAmount",
+      "validate": {
+        "required": true,
+        "min": 1
+      }
+    },
+    {
+      "label": "Annual Income",
+      "type": "number",
+      "layout": {
+        "row": "Row_0ai3k03",
+        "columns": null
+      },
+      "id": "Field_0ai3k03",
+      "key": "annualIncome",
+      "validate": {
+        "required": true,
+        "min": 1
+      }
+    },
+    {
+      "label": "Existing Monthly Debt",
+      "type": "number",
+      "layout": {
+        "row": "Row_0md4k04",
+        "columns": null
+      },
+      "id": "Field_0md4k04",
+      "key": "existingMonthlyDebt",
+      "validate": {
+        "required": true,
+        "min": 0
+      }
+    },
+    {
+      "label": "Employment Status",
+      "type": "select",
+      "layout": {
+        "row": "Row_0es5k05",
+        "columns": null
+      },
+      "id": "Field_0es5k05",
+      "key": "employmentStatus",
+      "validate": {
+        "required": true
+      },
+      "values": [
+        {
+          "label": "Employed",
+          "value": "Employed"
+        },
+        {
+          "label": "Self-Employed",
+          "value": "Self-Employed"
+        },
+        {
+          "label": "Unemployed",
+          "value": "Unemployed"
+        }
+      ]
+    },
+    {
+      "label": "Loan Purpose",
+      "type": "select",
+      "layout": {
+        "row": "Row_0lp6k06",
+        "columns": null
+      },
+      "id": "Field_0lp6k06",
+      "key": "loanPurpose",
+      "validate": {
+        "required": true
+      },
+      "values": [
+        {
+          "label": "Mortgage",
+          "value": "Mortgage"
+        },
+        {
+          "label": "Car",
+          "value": "Car"
+        },
+        {
+          "label": "Personal",
+          "value": "Personal"
+        },
+        {
+          "label": "Business",
+          "value": "Business"
+        }
+      ]
+    }
+  ],
+  "type": "default",
+  "id": "document-check-form",
+  "exporter": {
+    "name": "Fluxnova Modeler",
+    "version": "1.1.0-dev"
+  },
+  "executionPlatform": "Fluxnova Platform",
+  "executionPlatformVersion": "1.0.0",
+  "schemaVersion": 18
+}
