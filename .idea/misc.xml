@@ -5,6 +5,9 @@
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/fluxnova-springboot-example/pom.xml" />
+        <option value="$PROJECT_DIR$/ai/fluxnova-mcp-query-demo/pom.xml" />
+        <option value="$PROJECT_DIR$/ai/fluxnova-mcp-query-demo/fluxnova-service/pom.xml" />
+        <option value="$PROJECT_DIR$/ai/fluxnova-mcp-query-demo/mcp-client-chatbot/pom.xml" />
       </list>
     </option>
   </component>
